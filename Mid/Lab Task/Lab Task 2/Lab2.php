@@ -93,6 +93,18 @@
 </div>
 
 
+<script>
+function validateFrom(){
+
+    let name= document.getElementByID("name").value.trim();
+    let email= document.getElementByID("email").value.trim();
+    let phone= document.getElementByID("phone").value.trim();
+    let password= document.getElementByID("password").value.;
+    let confirmPassword= document.getElementByID("confirmPassword").value;
+    
+
+}
+
 
 
 
