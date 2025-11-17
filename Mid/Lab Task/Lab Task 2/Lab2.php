@@ -87,7 +87,12 @@
 
 <input type="text" id="activityInput" placeholder="Enter Activity Name">
     <button onclick="addActivity()">Add Activity</button>
-    
+
+    <div id="activityList"></div>
+
+</div>
+
+
 
 
 
