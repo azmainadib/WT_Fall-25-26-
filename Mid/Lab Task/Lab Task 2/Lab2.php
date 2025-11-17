@@ -40,4 +40,15 @@
         cursor:pointer;
 
     }
-    
+    button:hover{
+        background:red;
+    }
+    .activity-item{
+        background:#e8f0fe;
+        padding: 10px ;
+        margin-top:8px;
+        border-radius:5px;
+        display: flex;
+        justify-content: space-between;
+        
+    }
