@@ -69,5 +69,22 @@
     <form id="registrationForm">
         <label>Full Name</label>
         <input type="text" id="name">
+        <label>Email</label>
+        <input type="text" id="email">
+
+        <label>Phone Number</label>
+        <input type="text" id="phone">
+
+        <label>Password</label>
+        <input type="password" id="password">
+
+        <label>Confirm Password</label>
+        <input type="password" id="confirmPassword">
+        <button type="button" onclick="validateForm()">Register</button>
+</from>
+<hr>
+<h2>2.Activity Selection</h2>
+
+
 
 
