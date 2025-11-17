@@ -32,5 +32,12 @@
 
     }
     button{
-        
+        background:#007bff;
+        color:white;
+        padding: 10px 18px;
+        border:none;
+        border-radius:5px;
+        cursor:pointer;
+
     }
+    
