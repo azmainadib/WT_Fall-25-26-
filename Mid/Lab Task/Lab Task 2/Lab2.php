@@ -60,4 +60,14 @@
     }
     </style>
     </head>
-    
+
+    <body>
+    <div class = "container">
+        <h1>1. participent Registration</h1>
+        <div id="successMessage"></div>
+
+    <form id="registrationForm">
+        <label>Full Name</label>
+        <input type="text" id="name">
+
+
