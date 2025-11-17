@@ -85,6 +85,10 @@
 <hr>
 <h2>2.Activity Selection</h2>
 
+<input type="text" id="activityInput" placeholder="Enter Activity Name">
+    <button onclick="addActivity()">Add Activity</button>
+    
+
 
 
 
