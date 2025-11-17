@@ -52,3 +52,12 @@
         justify-content: space-between;
         
     }
+    .success{
+        background:#c8f7c5;
+        padding:10px;
+        border-left:5px solid green;
+        margin-bottom: 20px;
+    }
+    </style>
+    </head>
+    
