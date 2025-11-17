@@ -22,3 +22,15 @@
         width: auto;
 
     }
+
+    input{
+        width:100%;
+        padding: 8px:
+        margin:6px 0 15px 0;
+        border:1px solid #aaa;
+        border-radius: 4px;
+
+    }
+    button{
+        
+    }
