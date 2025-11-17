@@ -1,113 +1,119 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<title>Event Registration<title>
- <style>
-    body {
-        font-family:Arial;
-        margin:40px;
-        background:lightcoral;
-    }
-
-    h1,h2{
-        color: black;
-    }
-
-    .container{
-        background: white;
-        padding: 20px:
-        border-radius: 8px;
-        border-radius: 8px;
-        width: auto;
-
-    }
-
-    input{
-        width:100%;
-        padding: 8px:
-        margin:6px 0 15px 0;
-        border:1px solid #aaa;
-        border-radius: 4px;
-
-    }
-    button{
-        background:#007bff;
-        color:white;
-        padding: 10px 18px;
-        border:none;
-        border-radius:5px;
-        cursor:pointer;
-
-    }
-    button:hover{
-        background:red;
-    }
-    .activity-item{
-        background:#e8f0fe;
-        padding: 10px ;
-        margin-top:8px;
-        border-radius:5px;
-        display: flex;
-        justify-content: space-between;
-        
-    }
-    .success{
-        background:#c8f7c5;
-        padding:10px;
-        border-left:5px solid green;
-        margin-bottom: 20px;
-    }
+    <title>Event Registration</title>
+    <style>
+        .form {
+            border: 2px solid #fff0f0ff;
+            border-radius: 10px;
+            padding: 20px;
+            width: 520px;
+            background: white;
+        }
+        input {
+            width: 95%;
+            padding: 7px;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #0863adff;
+            color: white;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            font-size: 17px;
+        }
+        button:hover {
+            background: red;
+        }
+        #output, #activityList {
+            margin: 15px;
+            font-size: 15px;
+        }
+        .activity-item {
+            background: #e8f0fe;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 5px;
+            display: flex;
+            justify-content: space-between;
+        }
     </style>
-    </head>
+</head>
 
-    <body>
-    <div class = "container">
-        <h1>1. participent Registration</h1>
-        <div id="successMessage"></div>
+<body style="background: skyblue;">
+    <center>
+        <table class="form">
+            <tr><td><h1>Participant Registration</h1></td></tr>
 
-    <form id="registrationForm">
-        <label>Full Name</label>
-        <input type="text" id="name">
-        <label>Email</label>
-        <input type="text" id="email">
+            <tr><td>Full Name:</td></tr>
+            <tr><td><input type="text" id="name"></td></tr>
 
-        <label>Phone Number</label>
-        <input type="text" id="phone">
+            <tr><td>Email:</td></tr>
+            <tr><td><input type="text" id="email"></td></tr>
 
-        <label>Password</label>
-        <input type="password" id="password">
+            <tr><td>Phone Number:</td></tr>
+            <tr><td><input type="text" id="phone"></td></tr>
 
-        <label>Confirm Password</label>
-        <input type="password" id="confirmPassword">
-        <button type="button" onclick="validateForm()">Register</button>
-</from>
-<hr>
-<h2>2.Activity Selection</h2>
+            <tr><td>Password:</td></tr>
+            <tr><td><input type="password" id="password"></td></tr>
 
-<input type="text" id="activityInput" placeholder="Enter Activity Name">
-    <button onclick="addActivity()">Add Activity</button>
+            <tr><td>Confirm Password:</td></tr>
+            <tr><td><input type="password" id="confirmPassword"></td></tr>
 
-    <div id="activityList"></div>
+            <tr><td><button onclick="validateForm()">Register</button></td></tr>
 
-</div>
+            <tr><td><div id="output"></div></td></tr>
 
+            <tr><td><h1>Activity Selection</h1></td></tr>
 
-<script>
-function validateFrom(){
+            <tr><td>Activity Name:</td></tr>
+            <tr><td><input type="text" id="activityInput"></td></tr>
 
-    let name= document.getElementByID("name").value.trim();
-    let email= document.getElementByID("email").value.trim();
-    let phone= document.getElementByID("phone").value.trim();
-    let password= document.getElementByID("password").value.;
-    let confirmPassword= document.getElementByID("confirmPassword").value;
-   
-    if (!name )
+            <tr><td><button onclick="addActivity()">Add Activity</button></td></tr>
 
-}
+            <tr><td><div id="activityList"></div></td></tr>
+        </table> 
+    </center>
 
+    <script>
+        function validateForm() {
+            let name = document.getElementById("name").value.trim();
+            let email = document.getElementById("email").value.trim();
+            let phone = document.getElementById("phone").value.trim();
+            let password = document.getElementById("password").value.trim();
+            let confirmPassword = document.getElementById("confirmPassword").value.trim();
 
+            let output = document.getElementById("output");
 
+            if (!name || !email || !phone || !password || !confirmPassword) {
+                output.innerHTML = "<span style='color:red;'>All fields are required!</span>";
+                return;
+            }
 
+            if (password !== confirmPassword) {
+                output.innerHTML = "<span style='color:red;'>Passwords do not match!</span>";
+                return;
+            }
 
+            output.innerHTML = "<span style='color:green;'>Registration Successful!</span>";
+        }
 
+        function addActivity() {
+            let activity = document.getElementById("activityInput").value.trim();
+            let list = document.getElementById("activityList");
+
+            if (!activity) return;
+
+            let div = document.createElement("div");
+            div.className = "activity-item";
+            div.innerHTML = `${activity} <button onclick="this.parentElement.remove()">X</button>`;
+
+            list.appendChild(div);
+            document.getElementById("activityInput").value = "";
+        }
+    </script>
+</body>
+</html>
