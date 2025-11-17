@@ -101,9 +101,11 @@ function validateFrom(){
     let phone= document.getElementByID("phone").value.trim();
     let password= document.getElementByID("password").value.;
     let confirmPassword= document.getElementByID("confirmPassword").value;
-    
+   
+    if (!name )
 
 }
+
 
 
 
